@@ -1,0 +1,5 @@
+#windows
+*.swp
+
+#git file
+git.sh
