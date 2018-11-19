@@ -1,0 +1,74 @@
+#!/bin/sh
+cat << __EOC__
+$ ./configure  '--prefix=/usr/local/bacula-9.2.1' '--enable-smartalloc' '--with-mysql' '--with-db-user=bacula' '--with-db-password=bacula' '--with-db-port=3306' '--with-openssl' '--with-readline=/usr/include/readline' '--sysconfdir=/etc/bacula' '--bindir=/usr/bin' '--sbindir=/usr/sbin' '--with-scriptdir=/etc/bacula/scripts' '--with-plugindir=/etc/bacula/plugins' '--with-pid-dir=/var/run' '--with-subsys-dir=/etc/bacula/working' '--with-working-dir=/etc/bacula/working' '--with-bsrdir=/etc/bacula/bootstrap' '--with-systemd' '--disable-conio' '--disable-nls' '--with-logdir=/var/log/bacula' '--with-dump-email=hello-168@163.com' '--with-job-email=hello-168@163.com'
+
+Configuration on Wed Nov 14 05:20:32 UTC 2018:
+
+   Host:		     x86_64-pc-linux-gnu -- redhat (Core)
+   Bacula version:	     Bacula 9.2.1 (12 August 2018)
+   Source code location:     .
+   Install binaries:	     /usr/sbin
+   Install libraries:	     /usr/local/bacula-9.2.1/lib
+   Install config files:     /etc/bacula
+   Scripts directory:	     /etc/bacula/scripts
+   Archive directory:	     /tmp
+   Working directory:	     /etc/bacula/working
+   PID directory:	     /var/run
+   Subsys directory:	     /etc/bacula/working
+   Man directory:	     /usr/share/man
+   Data directory:	     /usr/local/bacula-9.2.1/share
+   Plugin directory:	     /etc/bacula/plugins
+   C Compiler:		     gcc 4.8.5
+   C++ Compiler:	     /usr/bin/g++ 4.8.5
+   Compiler flags:	      -g -O2 -Wall -x c++ -fno-strict-aliasing -fno-exceptions -fno-rtti
+   Linker flags:	      
+   Libraries:		     -lpthread -ldl -ldl 
+   Statically Linked Tools:  no
+   Statically Linked FD:     no
+   Statically Linked SD:     no
+   Statically Linked DIR:    no
+   Statically Linked CONS:   no
+   Database backends:	     MySQL
+   Database port:	     3306
+   Database name:	     bacula
+   Database user:	     bacula
+   Database SSL options:     
+
+   Job Output Email:	     hello-168@163.com
+   Traceback Email:	     hello-168@163.com
+   SMTP Host Address:	     localhost
+
+   Director Port:	     9101
+   File daemon Port:	     9102
+   Storage daemon Port:      9103
+
+   Director User:	     
+   Director Group:	     
+   Storage Daemon User:      
+   Storage DaemonGroup:      
+   File Daemon User:	     
+   File Daemon Group:	     
+
+   Large file support:	     yes
+   Bacula conio support:     no -lreadline -lhistory -ltinfo
+   readline support:	     yes 
+   TCP Wrappers support:     no 
+   TLS support: 	     yes
+   Encryption support:	     yes
+   ZLIB support:	     yes
+   LZO support: 	     yes
+   enable-smartalloc:	     yes
+   enable-lockmgr:	     no
+   bat support: 	     no
+   client-only: 	     no
+   build-dird:		     yes
+   build-stored:	     yes
+   Plugin support:	     yes
+   AFS support: 	     no
+   ACL support: 	     yes
+   XATTR support:	     yes
+   systemd support:	     yes /lib/systemd/system
+   Batch insert enabled:     MySQL
+
+  
+__EOC__

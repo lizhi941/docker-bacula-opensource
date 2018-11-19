@@ -1,0 +1,5 @@
+baculum:
+  image: lizhi/debian-bacula-dir-fourth:1
+  ports:
+    - "9096:9096"
+    - "9095:9095"

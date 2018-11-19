@@ -1,0 +1,44 @@
+bacula-db-mysql-data:
+  image: lizhi/bacula-db-mysql-data:9.2.1
+  container_name: bacula-db-mysql-data921
+
+bacula-db-mysql:
+  image: lizhi/bacula-db-mysql:9.2.1
+  container_name: bacula-db-mysql921
+  restart: always
+  hostname: bacula-db-mysql921
+  volumes_from:
+    - bacula-db-mysql-data:rw
+  environment:
+    MYSQL_ROOT_PASSWORD: 123456
+
+bacula-dir:
+  image: lizhi/bacula-dir:9.2.1
+  container_name: bacula-dir921
+  hostname: bacula-dir921
+  ports:
+    - "9101:9101" # bconsole ->dir
+    - "9102:9102" # dir  ->fd
+  extra_hosts:
+    - "bacula-fd:127.0.0.1"
+  environment:
+    - DB_HOST=bacula-db-mysql921
+  links:
+    - bacula-db-mysql
+  entrypoint:
+    - bash
+    - -c
+    - |
+      set -e
+      echo "Waiting foe Mysql to be avaulable"
+      export  MYSQLPASSWORD="$$MYSQL_ROOT_PASSWORD"
+      maxTries=10
+      while [ "$$maxTries" -gt 0 ] && ! mysql -h "$$DB_HOST" -U 'root' -c '\l'; do
+          sleep 1
+      done
+      echo 
+      if [ "$$maxTries" -le 0 ]; then
+          echo >&2 'error:unable to connect Mysql after 10 tries'
+          exit 1
+      fi
+
