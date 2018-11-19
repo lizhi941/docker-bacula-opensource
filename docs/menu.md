@@ -2,8 +2,8 @@
 
 
 - [Introduction](#introduction)
-- [The architecture](#The architecture)
-   - [Why this architecture ](#Why this crchitecture)
+- [The architecture](#the architecture)
+   - [Why this architecture](#why this architecture)
    - [bacula-db-mysql-data](/docs/bacula-db-mysql-data.md)
    - [bacula-db-mysql](/docs/bacula-db-mysql.md)
    - [bacula-dir](/docs/bacula-dir.md)
@@ -13,8 +13,8 @@
 <a name="introduction"></a>    
 ## Introduction
 
-<a name="The architecture"></a>
+<a name="the architecture"></a>
 ## The architecture
 
-<a name="Why this crchitecture"></a>
+<a name="why this architecture"></a>
 ## Why this crchitecture
